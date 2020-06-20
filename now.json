@@ -7,9 +7,5 @@
         "thechangebe.vercel.app"
     ],
 
-    "env": {
-        "PORT": "3000"
-    },
-
     "routes": [{ "src": "/(.*)", "dest": "packages/website/$1" }]
 }
