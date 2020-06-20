@@ -1,0 +1,4 @@
+.jest-coverage
+packages/website/dist
+node_modules
+packages/website/.next
