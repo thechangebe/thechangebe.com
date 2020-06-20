@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "thechangebe",
+  "env": {
+    "PORT": "3000"
+  },
+
+  "builds": [
+    { "src": "packages/website/next.config.js", "use": "@now/next" }
+  ],
+
+  "routes": [
+    { "src": "/(.*)", "dest": "packages/website/$1" }
+  ]
+}
