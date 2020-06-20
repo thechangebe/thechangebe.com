@@ -1,0 +1,9 @@
+{
+  "type": "static",
+  "alias": "thechangebe-website",
+  "static": {
+    "public": "public"
+  },
+  "public": true,
+  "version": 1
+}
