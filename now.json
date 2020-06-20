@@ -2,6 +2,8 @@
   "version": 2,
   "public": true,
   "name": "thechangebe",
+  "alias": ["thechangebe-git-master.thechangebe.vercel.app", "thechangebe.thechangebe.vercel.app", "thechangebe.vercel.app"],
+
   "env": {
     "PORT": "3000"
   },
