@@ -1,18 +1,15 @@
 {
-  "version": 2,
-  "public": true,
-  "name": "thechangebe",
-  "alias": ["thechangebe-git-master.thechangebe.vercel.app", "thechangebe.thechangebe.vercel.app", "thechangebe.vercel.app"],
+    "version": 2,
+    "public": true,
+    "alias": [
+        "thechangebe-git-master.thechangebe.vercel.app",
+        "thechangebe.thechangebe.vercel.app",
+        "thechangebe.vercel.app"
+    ],
 
-  "env": {
-    "PORT": "3000"
-  },
+    "env": {
+        "PORT": "3000"
+    },
 
-  "builds": [
-    { "src": "packages/website/next.config.js", "use": "@now/next" }
-  ],
-
-  "routes": [
-    { "src": "/(.*)", "dest": "packages/website/$1" }
-  ]
+    "routes": [{ "src": "/(.*)", "dest": "packages/website/$1" }]
 }
