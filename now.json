@@ -6,6 +6,7 @@
         "thechangebe.thechangebe.vercel.app",
         "thechangebe.vercel.app"
     ],
+    "builds": [{ "src": "packages/website/package.json", "use": "@now/next" }],
 
     "routes": [{ "src": "/(.*)", "dest": "packages/website/$1" }]
 }
