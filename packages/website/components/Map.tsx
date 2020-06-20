@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
+import ReactMapGL, { FlyToInterpolator, InteractiveMap } from 'react-map-gl'
 
 // @todo - Clear up this mess and useState hooks etc.
 class Map extends Component {
@@ -15,8 +15,9 @@ class Map extends Component {
 
     render() {
         return (
-            <ReactMapGL
+            <InteractiveMap
                 // @todo - Add Styles.
+                // @todo - Set Access Token via Env.
                 mapboxApiAccessToken="pk.eyJ1IjoidGhlY2hhbmdlYmUiLCJhIjoiY2tibmRybGdqMXJ5ajJ2cW43bnNub3A5dyJ9.BOp3bf8_eooK1IeohZbriA"
                 transitionDuration={1000}
                 transitionInterpolator={
@@ -29,6 +30,7 @@ class Map extends Component {
                 onViewportChange={(viewport: any) =>
                     this.setState({ viewport })
                 }
+                onClick={(e) => console.log(e)}
                 {...this.state.viewport}
             />
         )
