@@ -1,13 +1,22 @@
 {
     "name": "thechangebe.com",
+    "repository": "thechangebe/thechangebe.com",
     "private": true,
     "workspaces": [
         "packages/*"
     ],
+    "scripts": {
+        "all:watch": "lerna run --parallel watch",
+        "website:watch": "lerna run watch --scope @thechangebe/website",
+        "website:build": "lerna run build --scope @thechangebe/website"
+    },
     "dependencies": {
-        "website": "file:packages/website"
+        "@thechangebe/website": "file:packages/website"
     },
     "devDependencies": {
-        "ramda": "^0.27.0"
+        "@types/react": "^16.9.38",
+        "lerna": "^3.22.1",
+        "ramda": "^0.27.0",
+        "typescript": "^3.9.5"
     }
 }

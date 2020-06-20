@@ -3,14 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "watch": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "next": "9.4.4",
+    "prettier": "^2.0.5",
     "ramda": "^0.27.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.38"
   }
 }
