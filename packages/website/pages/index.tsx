@@ -1,7 +1,11 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import React from 'react'
-import { sources } from 'constants/suburbs'
+import {
+    sources,
+    victorianSuburbFills,
+    victorianSuburbBorders,
+} from 'constants/suburbs'
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 const Source = dynamic(() => import('../components/Source'), { ssr: false })
@@ -19,7 +23,7 @@ export default function Home() {
                     id={sources.victoria.id}
                     data={`https://thechangebe.github.io/thechangebe.com/data-sets/suburb-boundaries/${sources.victoria.name}-suburb-boundaries.json`}
                 >
-                    <Layer />
+                    <Layer config={victorianSuburbBorders} />
                 </Source>
             </Map>
         </>

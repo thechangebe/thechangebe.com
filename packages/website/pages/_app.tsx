@@ -23,6 +23,10 @@ export default ({ Component, pageProps }: AppProps) => {
                     href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
                     rel="stylesheet"
                 />
+                <link
+                    rel="stylesheet"
+                    href="https://use.typekit.net/yam0hky.css"
+                />
                 <meta content={description} name="description" />
                 <meta property="og:title" content={title} />
                 <meta property="og:image" content="/static/banner.jpg" />
@@ -38,7 +42,6 @@ export default ({ Component, pageProps }: AppProps) => {
                     ${normalize}
                 `}
             />
-
             <Component {...pageProps} />
         </>
     )

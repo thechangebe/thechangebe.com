@@ -5,4 +5,8 @@ module.exports = {
         config.node = { fs: 'empty' }
         return config
     },
+    publicRuntimeConfig: {
+        MAPBOX_API_KEY: process.env.MAPBOX_API_KEY,
+        MAPBOX_STYLE_URL: process.env.MAPBOX_STYLE_URL,
+    },
 }

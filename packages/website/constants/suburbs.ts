@@ -8,9 +8,29 @@ export const sources = {
     westernAustralia: { name: 'wa', id: 'waSuburbs' },
 }
 
-export const victoria = {
-    id: 'victorianSuburbsLayer',
+export const victorianSuburbFills = {
+    id: 'victorianSuburbFills',
     source: sources.victoria.id,
     type: 'fill',
-    paint: { 'fill-opacity': 0.8 },
+    layout: {},
+    paint: {
+        'fill-color': '#627BC1',
+        'fill-opacity': [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            1,
+            0.1,
+        ],
+    },
+}
+
+export const victorianSuburbBorders = {
+    id: 'victorianSuburbBorders',
+    type: 'line',
+    source: sources.victoria.id,
+    layout: {},
+    paint: {
+        'line-color': '#627BC1',
+        'line-width': 2,
+    },
 }

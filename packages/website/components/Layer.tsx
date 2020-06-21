@@ -1,5 +1,8 @@
 import * as React from 'react'
 import { Layer } from 'react-map-gl'
-import { victoria } from 'constants/suburbs'
+import { victorianSuburbBorders } from '@constants/suburbs'
 
-export default () => <Layer {...victoria}></Layer>
+/* @ts-ignore */
+export default ({ config }: any) => {
+    return <Layer {...config}></Layer>
+}
