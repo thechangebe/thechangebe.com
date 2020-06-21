@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Source } from 'react-map-gl'
-import { useAsync } from 'react-use'
 
 export default ({
     children,

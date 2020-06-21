@@ -1,32 +1,11 @@
 export const sources = {
-    victoria: {
-        name: 'vic',
-        id: 'vicSuburbs',
-    },
-    southAustralia: {
-        name: 'sa',
-        id: 'saSuburbs',
-    },
-    westernAustralia: {
-        name: 'wa',
-        id: 'waSuburbs',
-    },
-    australianCapitalTerritory: {
-        name: 'act',
-        id: 'actSuburbs',
-    },
-    queensland: {
-        name: 'qld',
-        id: 'qldSuburbs',
-    },
-    newSouthWales: {
-        name: 'nsw',
-        id: 'nswSuburbs',
-    },
-    tasmania: {
-        name: 'tas',
-        id: 'tasSuburbs',
-    },
+    australianCapitalTerritory: { name: 'act', id: 'actSuburbs' },
+    newSouthWales: { name: 'nsw', id: 'nswSuburbs' },
+    queensland: { name: 'qld', id: 'qldSuburbs' },
+    southAustralia: { name: 'sa', id: 'saSuburbs' },
+    tasmania: { name: 'tas', id: 'tasSuburbs' },
+    victoria: { name: 'vic', id: 'vicSuburbs' },
+    westernAustralia: { name: 'wa', id: 'waSuburbs' },
 }
 
 export const victoria = {

@@ -1,16 +1,9 @@
-import { Component, useState } from 'react'
+import { useState } from 'react'
 import { FlyToInterpolator, InteractiveMap } from 'react-map-gl'
-
-// @todo - Clear up this mess and useState hooks etc.
+import { defaultMapSettings } from 'constants/map'
 
 export default ({ children }: { children: any }) => {
-    const [viewport, setViewport] = useState({
-        width: '100vw',
-        height: '100vh',
-        latitude: -37.87751282810639,
-        longitude: 145.01941213796172,
-        zoom: 10,
-    })
+    const [viewport, setViewport] = useState(defaultMapSettings)
 
     return (
         <InteractiveMap
@@ -26,7 +19,7 @@ export default ({ children }: { children: any }) => {
                 })
             }
             onViewportChange={(viewport: any) => setViewport({ ...viewport })}
-            onClick={(e) => console.log(e)}
+            onClick={(e: any) => console.log(e)}
             {...viewport}
         >
             {children}
