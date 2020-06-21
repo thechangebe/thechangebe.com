@@ -20,7 +20,9 @@
     "scripts": {
         "all:watch": "lerna run --parallel watch",
         "website:watch": "lerna run watch --scope @thechangebe/website",
-        "website:build": "lerna run build --scope @thechangebe/website"
+        "website:build": "lerna run build --scope @thechangebe/website",
+        "geojson:lint": "lerna run lint --scope @thechangebe/data-sets",
+        "geojson:fix": "lerna run fix --scope @thechangebe/data-sets"
     },
     "dependencies": {
         "@thechangebe/website": "file:packages/website"
