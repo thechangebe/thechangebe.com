@@ -1,53 +1,45 @@
-import App, { Container } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
+import { AppProps } from 'next/app'
+import { Global, css } from '@emotion/core'
+import normalize from 'normalize.css'
 
-class MyApp extends App {
-    static async getInitialProps({ Component, ctx }) {
-        let pageProps = {}
+export default ({ Component, pageProps }: AppProps) => {
+    const title = 'The Change Be'
+    const description = 'Open Source, Real-time Democracy'
 
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx)
-        }
+    return (
+        <>
+            <Head>
+                <title>{title}</title>
+                <meta charSet="utf-8" />
+                <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+                <meta
+                    content="width=device-width, initial-scale=1"
+                    name="viewport"
+                />
+                <link href="/static/favicon.ico" rel="shortcut icon" />
+                <link
+                    href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
+                    rel="stylesheet"
+                />
+                <meta content={description} name="description" />
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content="/static/banner.jpg" />
+                <meta content="en_US" property="og:locale" />
+                <meta content={description} property="og:description" />
+                <meta
+                    content="https://next-mapbox-demo.now.sh"
+                    property="og:url"
+                />
+            </Head>
+            <Global
+                styles={css`
+                    ${normalize}
+                `}
+            />
 
-        return { pageProps }
-    }
-
-    render() {
-        const { Component, pageProps } = this.props
-        const description =
-            'Creating a non-SSR map component inside a Next.js project.'
-        const title = `Next.js + Mapbox Demo - ${description}`
-
-        return (
-            <Container>
-                <Head>
-                    <title>{title}</title>
-                    <meta charSet="utf-8" />
-                    <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-                    <meta
-                        content="width=device-width, initial-scale=1"
-                        name="viewport"
-                    />
-                    <link href="/static/favicon.ico" rel="shortcut icon" />
-                    <link
-                        href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
-                        rel="stylesheet"
-                    />
-                    <meta content={description} name="description" />
-                    <meta property="og:title" content={title} />
-                    <meta property="og:image" content="/static/banner.jpg" />
-                    <meta content="en_US" property="og:locale" />
-                    <meta content={description} property="og:description" />
-                    <meta
-                        content="https://next-mapbox-demo.now.sh"
-                        property="og:url"
-                    />
-                </Head>
-                <Component {...pageProps} />
-            </Container>
-        )
-    }
+            <Component {...pageProps} />
+        </>
+    )
 }
-
-export default MyApp

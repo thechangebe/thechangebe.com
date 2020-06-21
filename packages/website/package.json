@@ -1,26 +1,32 @@
 {
-  "name": "@thechangebe/website",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "watch": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@types/react-map-gl": "^5.2.4",
-    "mapbox-gl": "^1.11.0",
-    "next": "9.4.4",
-    "prettier": "^2.0.5",
-    "ramda": "^0.27.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-map-gl": "^5.2.7",
-    "react-mapbox-gl": "^4.8.6",
-    "styled-components": "^5.1.1"
-  },
-  "devDependencies": {
-    "@types/mapbox-gl": "^1.10.4",
-    "@types/react": "^16.9.38"
-  }
+    "name": "@thechangebe/website",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "watch": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@emotion/core": "^10.0.28",
+        "@emotion/styled": "^10.0.27",
+        "css": "^2.2.4",
+        "emotion-server": "^10.0.27",
+        "next": "9.4.4",
+        "normalize.css": "^8.0.1",
+        "prettier": "^2.0.5",
+        "ramda": "^0.27.0",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "react-map-gl": "^5.2.7",
+        "react-use": "^15.3.0",
+        "tailwind": "^4.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.38",
+        "@types/react-map-gl": "^5.2.4",
+        "babel-plugin-emotion": "^10.0.33",
+        "babel-plugin-macros": "^2.8.0",
+        "tailwind.macro": "^1.0.0-alpha.10"
+    }
 }
