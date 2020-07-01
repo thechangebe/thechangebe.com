@@ -1,3 +1,1 @@
-module.exports = {
-    tailwind: { styled: '@emotion/styled' },
-}
+module.exports = {}

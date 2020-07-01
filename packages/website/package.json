@@ -21,7 +21,6 @@
         "react-dom": "16.13.1",
         "react-map-gl": "^5.2.7",
         "react-use": "^15.3.0",
-        "tailwind": "^4.0.0"
     },
     "devDependencies": {
         "@babel/types": "^7.10.3",
@@ -29,7 +28,5 @@
         "@types/react": "^16.9.38",
         "@types/react-map-gl": "^5.2.4",
         "babel-plugin-emotion": "^10.0.33",
-        "babel-plugin-macros": "^2.8.0",
-        "tailwind.macro": "^1.0.0-alpha.10"
     }
 }
