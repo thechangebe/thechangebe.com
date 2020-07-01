@@ -2,47 +2,40 @@ import Head from 'next/head'
 import React from 'react'
 import { AppProps } from 'next/app'
 import { Global, css } from '@emotion/core'
+import { ThemeProvider } from 'emotion-theming'
+
+import theme from '@constants/theme'
+import { FontHeadTags, SeoHeadTags, PrismicPreview } from 'components'
 import normalize from 'normalize.css'
 
 export default ({ Component, pageProps }: AppProps) => {
-    const title = 'The Change Be'
-    const description = 'Open Source, Real-time Democracy'
-
     return (
         <>
             <Head>
-                <title>{title}</title>
                 <meta charSet="utf-8" />
                 <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
                 <meta
                     content="width=device-width, initial-scale=1"
                     name="viewport"
                 />
+                {/* @todo - Ensure favicon is not NextJS logo. */}
                 <link href="/static/favicon.ico" rel="shortcut icon" />
-                <link
-                    href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
-                    rel="stylesheet"
-                />
-                <link
-                    rel="stylesheet"
-                    href="https://use.typekit.net/yam0hky.css"
-                />
-                <meta content={description} name="description" />
-                <meta property="og:title" content={title} />
-                <meta property="og:image" content="/static/banner.jpg" />
-                <meta content="en_US" property="og:locale" />
-                <meta content={description} property="og:description" />
-                <meta
-                    content="https://next-mapbox-demo.now.sh"
-                    property="og:url"
-                />
+                <link rel="icon" href="/favicon.ico" />
+                <FontHeadTags />
+                <SeoHeadTags />
+                <PrismicPreview />
             </Head>
-            <Global
-                styles={css`
-                    ${normalize}
-                `}
-            />
-            <Component {...pageProps} />
+            <ThemeProvider theme={theme}>
+                <Global
+                    styles={css`
+                        ${normalize}
+                        body {
+                            background: ${theme.colors.black};
+                        }
+                    `}
+                />
+                <Component {...pageProps} />
+            </ThemeProvider>
         </>
     )
 }
