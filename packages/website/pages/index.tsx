@@ -31,7 +31,7 @@ export default ({ tagline, cta }) => {
                         fontFamily="monospace"
                         p={{ xs: 's', l: 'xl' }}
                     >
-                        {RichText.asText(cta)}
+                        {RichText.render(cta)}
                     </Paragraph>
                 </Box>
             </Grid>
