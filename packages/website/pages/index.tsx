@@ -1,27 +1,48 @@
-import Head from 'next/head'
-import dynamic from 'next/dynamic'
 import React from 'react'
-import { sources, victorianSuburbBorders } from 'constants/suburbs'
+import { Box, Grid, Paragraph, H2 } from '@styled-system'
 
-const Map = dynamic(() => import('../components/Map'), { ssr: false })
-const Source = dynamic(() => import('../components/Source'), { ssr: false })
-const Layer = dynamic(() => import('../components/Layer'), { ssr: false })
+import { RichText } from 'prismic-reactjs'
+import { PrismicClient } from '../clients/prismic'
+import { GetStaticProps } from 'next'
 
-export default function Home() {
+export default ({ tagline, cta }) => {
     return (
         <>
-            <Head>
-                <title>The Change Be</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <Map>
-                <Source
-                    id={sources.victoria.id}
-                    data={`https://thechangebe.github.io/thechangebe.com/data-sets/suburb-boundaries/${sources.victoria.name}-suburb-boundaries.json`}
-                >
-                    <Layer config={victorianSuburbBorders} />
-                </Source>
-            </Map>
+            <Grid
+                maxWidth="100vw"
+                gridAutoFlow="row"
+                gridTemplateColumns={{ xs: '100%', m: '50% 50%', l: '44% 56%' }}
+                gridTemplateRows={{ xs: 'auto', l: '100vh' }}
+            >
+                <Box p={{ xs: 's', s: 'm', m: 'l' }} overflow="hidden">
+                    <H2
+                        fontSize={{ xs: 'xl', m: 'xl', l: 'xxl' }}
+                        fontFamily="serif"
+                        color="white"
+                        fontWeight="black"
+                    >
+                        {RichText.asText(tagline)}
+                    </H2>
+                </Box>
+                <Box p={3}>
+                    <Paragraph
+                        fontSize={{ xs: 's', m: 'xs' }}
+                        color="white"
+                        fontFamily="monospace"
+                        p={{ xs: 's', l: 'xl' }}
+                    >
+                        {RichText.asText(cta)}
+                    </Paragraph>
+                </Box>
+            </Grid>
         </>
     )
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { data } = await PrismicClient.getSingle('waitlist', {})
+    const { tagline, cta } = data
+    return {
+        props: { tagline, cta },
+    }
 }
