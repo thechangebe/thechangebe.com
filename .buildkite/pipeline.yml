@@ -1,0 +1,9 @@
+steps:
+    - label: 'What packages have been changed?'
+      plugins:
+          - chronotc/monorepo-diff#v1.1.1:
+                wait: true
+                diff: 'git diff --name-only HEAD~1'
+                watch:
+                    - path: ['packages/website', '.buildkite/pipelines/website']
+                      config: { trigger: 'website' }
