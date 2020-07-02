@@ -3,7 +3,7 @@ steps:
       plugins:
           - chronotc/monorepo-diff#v1.1.1:
                 wait: true
-                diff: 'git diff --name-only HEAD~1'
+                diff: 'git --no-pager diff --name-only refs/heads/master..refs/remotes/origin/$BUILDKITE_BRANCH'
                 watch:
                     - path: ['packages/website', '.buildkite/pipelines/website']
                       config: { trigger: 'website' }
