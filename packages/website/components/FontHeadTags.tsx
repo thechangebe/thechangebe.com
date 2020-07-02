@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const FontHeadTags = () => (
+export const FontHeadTags = (): React.FC => (
     <>
         <link rel="stylesheet" href="https://use.typekit.net/yam0hky.css" />
         <script

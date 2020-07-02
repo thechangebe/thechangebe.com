@@ -2,7 +2,7 @@ steps:
     - label: Lint
       plugins: [docker#v3.5.0: { image: 'node:lts' }]
       commands:
-          - yarn website:build
+          - yarn website:lint
     # Deploy
     # - label: Install Now CLI
     #   command: npm install --global --unsafe-perm now

@@ -1,4 +1,5 @@
-export const PrismicPreview = () => (
+import React from 'react'
+export const PrismicPreview = (): React.ReactElement => (
     <>
         <script
             async
