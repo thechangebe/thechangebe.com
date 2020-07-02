@@ -1,0 +1,9 @@
+{
+    "python.formatting.provider": "black",
+    "python.pythonPath": "/Users/bx/.virtualenvs/thechangebe/bin/python",
+    "python.linting.enabled": false,
+    "editor.formatOnSave": true,
+    "eslint.packageManager": "yarn",
+    "eslint.run": "onSave",
+    "eslint.workingDirectories": ["packages/website"]
+}

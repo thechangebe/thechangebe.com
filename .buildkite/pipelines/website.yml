@@ -1,3 +1,9 @@
 steps:
-    - label: 'Hello World!'
-      command: echo 'Hello World from Website!'
+    - label: Lint
+      plugins: [docker#v3.5.0: { image: 'node:lts' }]
+      commands:
+          - yarn website:build
+    # Deploy
+    # - label: Install Now CLI
+    #   command: npm install --global --unsafe-perm now
+    #   plugins: [docker#v3.5.0: { image: 'node:lts' }]

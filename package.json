@@ -21,6 +21,7 @@
         "all:watch": "lerna run --parallel watch",
         "website:watch": "lerna run watch --scope @thechangebe/website",
         "website:build": "lerna run build --scope @thechangebe/website",
+        "website:lint": "eslint ./packages/website",
         "geojson:lint": "lerna run lint --scope @thechangebe/data-sets",
         "geojson:fix": "lerna run fix --scope @thechangebe/data-sets"
     },
@@ -28,7 +29,20 @@
         "@thechangebe/website": "file:packages/website"
     },
     "devDependencies": {
-        "@types/react": "^16.9.38",
+        "@babel/types": "^7.10.3",
+        "@types/ramda": "^0.27.6",
+        "@types/react": "^16.9.41",
+        "@types/react-map-gl": "^5.2.4",
+        "@types/styled-system": "^5.1.9",
+        "@typescript-eslint/eslint-plugin": "^3.5.0",
+        "@typescript-eslint/parser": "^3.5.0",
+        "babel-plugin-emotion": "^10.0.33",
+        "babel-plugin-macros": "^2.8.0",
+        "eslint": "^7.3.1",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "eslint-plugin-react": "^7.20.3",
         "lerna": "^3.22.1",
         "ramda": "^0.27.0",
         "typescript": "^3.9.5"

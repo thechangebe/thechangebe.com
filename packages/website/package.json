@@ -5,7 +5,8 @@
     "scripts": {
         "watch": "next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "debug": "NODE_OPTIONS='--inspect' next dev"
     },
     "dependencies": {
         "@emotion/core": "^10.0.28",
@@ -32,12 +33,8 @@
         "swr": "^0.2.3"
     },
     "devDependencies": {
-        "@babel/types": "^7.10.3",
-        "@types/ramda": "^0.27.6",
-        "@types/react": "^16.9.38",
-        "@types/react-map-gl": "^5.2.4",
-        "@types/styled-system": "^5.1.9",
-        "babel-plugin-emotion": "^10.0.33",
-        "babel-plugin-macros": "^2.8.0"
+        "@types/react": "^16.9.41",
+        "@typescript-eslint/eslint-plugin": "^3.5.0",
+        "@typescript-eslint/parser": "^3.5.0"
     }
 }

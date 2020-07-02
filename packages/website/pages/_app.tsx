@@ -1,5 +1,5 @@
+import React, { ReactElement } from 'react'
 import Head from 'next/head'
-import React from 'react'
 import { AppProps } from 'next/app'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
@@ -8,7 +8,7 @@ import theme from '@constants/theme'
 import { FontHeadTags, SeoHeadTags, PrismicPreview } from 'components'
 import normalize from 'normalize.css'
 
-export default ({ Component, pageProps }: AppProps) => {
+const CustomApp = ({ Component, pageProps }: AppProps): ReactElement => {
     return (
         <>
             <Head>
@@ -39,3 +39,5 @@ export default ({ Component, pageProps }: AppProps) => {
         </>
     )
 }
+
+export default CustomApp
