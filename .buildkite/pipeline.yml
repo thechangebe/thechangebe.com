@@ -1,3 +1,6 @@
+env:
+    BUILDKITE_CLEAN_CHECKOUT: true
+
 steps:
     - label: 'What packages have been changed?'
       plugins:
