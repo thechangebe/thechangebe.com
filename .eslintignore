@@ -4,3 +4,4 @@
 **/jest.config.js
 **/__snapshots__
 **/next-env.d.ts
+.eslintrc.js

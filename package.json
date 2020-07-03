@@ -5,25 +5,11 @@
     "workspaces": [
         "packages/*"
     ],
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
     "scripts": {
         "all:watch": "lerna run --parallel watch",
         "website:watch": "lerna run watch --scope @thechangebe/website",
         "website:build": "lerna run build --scope @thechangebe/website",
-        "website:lint": "lerna run lint --scope @thechangebe/website",
-        "geojson:lint": "lerna run lint --scope @thechangebe/data-sets",
-        "geojson:fix": "lerna run fix --scope @thechangebe/data-sets"
+        "website:lint": "lerna run lint --scope @thechangebe/website"
     },
     "dependencies": {
         "@thechangebe/website": "file:packages/website",
@@ -46,5 +32,17 @@
         "eslint-plugin-react": "^7.20.3",
         "lerna": "^3.22.1",
         "typescript": "^3.9.5"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     }
 }

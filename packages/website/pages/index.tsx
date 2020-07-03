@@ -44,7 +44,14 @@ const IndexPage = ({ tagline, cta }: IndexPageProps): NextPage => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+interface IndexStaticProps {
+    props: {
+        tagline: string
+        cta: string
+    }
+}
+
+export const getStaticProps: GetStaticProps = async (): Promise<any> => {
     const { data } = await PrismicClient.getSingle('waitlist', {})
     const { tagline, cta } = data
     return {
