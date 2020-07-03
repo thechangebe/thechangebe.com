@@ -1,9 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-# Website
-# @todo - Upload pipeline step via yml and provide hardcoded key of `upload_pipeline`
-if [[ "$BUILDKITE_PIPELINE_SLUG" == "website" && "$BUILDKITE_STEP_KEY" != "" ]]; then
-    echo '--- :sparkles: Working from the packages/website directory.'
-    cd packages/website
-fi

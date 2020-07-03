@@ -8,13 +8,13 @@ steps:
       key: lint
       depends_on: dependencies
       plugins: [docker#v3.5.0: { image: 'node:lts' }]
-      command: yarn lint
+      command: yarn website:lint
 
     - label: Build
       key: build
       depends_on: lint
       plugins: [docker#v3.5.0: { image: 'node:lts' }]
-      command: yarn build
+      command: yarn website:build
     # Deploy
     # - label: Install Now CLI
     #   command: npm install --global --unsafe-perm now
