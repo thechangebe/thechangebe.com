@@ -7,6 +7,6 @@ steps:
                 diff: git --no-pager diff --name-only refs/remotes/origin/master..refs/remotes/origin/$BUILDKITE_BRANCH
                 watch:
                     - path:
-                          - 'packages/website'
+                          - 'packages/website/**'
                           - '.buildkite/pipelines/website.yml'
                       config: { trigger: 'website' }
