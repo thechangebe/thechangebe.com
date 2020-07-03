@@ -26,7 +26,8 @@
         "geojson:fix": "lerna run fix --scope @thechangebe/data-sets"
     },
     "dependencies": {
-        "@thechangebe/website": "file:packages/website"
+        "@thechangebe/website": "file:packages/website",
+        "ramda": "^0.27.0"
     },
     "devDependencies": {
         "@babel/types": "^7.10.3",
@@ -44,7 +45,6 @@
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react": "^7.20.3",
         "lerna": "^3.22.1",
-        "ramda": "^0.27.0",
         "typescript": "^3.9.5"
     }
 }
