@@ -8,7 +8,9 @@ steps:
       key: lint
       depends_on: dependencies
       plugins: [docker#v3.5.0: { image: 'node:lts' }]
-      command: yarn website:lint
+      commands:
+          - echo "Linting Website"
+          - yarn website:lint
 
     - label: Build
       key: build
