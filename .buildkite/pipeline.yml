@@ -8,5 +8,9 @@ steps:
                 wait: true
                 diff: 'git diff --name-only HEAD~1'
                 watch:
-                    - path: ['packages/website', '.buildkite/pipelines/website']
+                    - path:
+                          [
+                              'packages/website',
+                              '.buildkite/pipelines/website.yml',
+                          ]
                       config: { trigger: 'website' }
