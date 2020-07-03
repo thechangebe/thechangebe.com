@@ -1,0 +1,13 @@
+*
+**/node_modules
+
+!.npmrc
+!package*.json
+!yarn.lock
+!lerna.json
+!babel.config.js
+!tsconfig.json
+
+
+# Packages
+!packages/website

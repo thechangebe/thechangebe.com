@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+    website:
+        build: { context: '.', dockerfile: node-ci.Dockerfile }
+        working_dir: /workdir
+        volumes: [.:/workdir]

@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@thechangebe/website": "file:packages/website",
+        "now": "^19.1.1",
         "ramda": "^0.27.0"
     },
     "devDependencies": {

@@ -5,3 +5,4 @@
 **/__snapshots__
 **/next-env.d.ts
 .eslintrc.js
+.babelrc

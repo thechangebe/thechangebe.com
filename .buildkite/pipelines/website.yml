@@ -1,15 +1,30 @@
+# @todo - Add steps for `master` branch only e.g deploy to Now.
+
 steps:
+    # @ todo - Push Built Image to ECR?
+    # - label: ':docker: Build'
+    #   plugins: [docker-compose#v3.3.0: { build: website }]
+
+    # --------
+    # Lint
+    # --------
     - label: Lint
       key: lint
-      command: yarn && yarn website:lint
-      plugins: [docker#v3.5.0: { image: 'node:lts' }]
+      command: yarn website:lint
+      plugins: [docker-compose#v3.3.0: { run: website }]
 
+    # --------
+    # @todo Test
+    # --------
+
+    # --------
+    # Build
+    # --------
     - label: Build
       key: build
       depends_on: lint
-      plugins: [docker#v3.5.0: { image: 'node:lts' }]
-      command: yarn && yarn website:build
-    # Deploy
-    # - label: Install Now CLI
-    #   command: npm install --global --unsafe-perm now
-    #   plugins: [docker#v3.5.0: { image: 'node:lts' }]
+      command: yarn website:build
+      plugins:
+          docker-compose#v3.3.0:
+              run: website
+              volumes: ['./packages/website/.next:/home/node/app/.next']
