@@ -1,7 +1,7 @@
 import seo from '@constants/seo'
 import React from 'react'
 
-export const SeoHeadTags = (): React.FC => (
+export const SeoHeadTags = (): React.ReactElement => (
     <>
         <title key="title">{seo.title}</title>
         <meta key="description" name="description" content={seo.description} />

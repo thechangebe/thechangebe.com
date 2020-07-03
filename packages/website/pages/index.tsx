@@ -3,14 +3,14 @@ import { Box, Grid, Paragraph, H2 } from '@styled-system'
 
 import { RichText } from 'prismic-reactjs'
 import { PrismicClient } from '../clients/prismic'
-import { GetStaticProps, NextPage } from 'next'
+import { GetStaticProps } from 'next'
 
 interface IndexPageProps {
     tagline: string
     cta: string
 }
 
-const IndexPage = ({ tagline, cta }: IndexPageProps): NextPage => {
+const IndexPage = ({ tagline, cta }: IndexPageProps): React.ReactElement => {
     return (
         <>
             <Grid
@@ -51,7 +51,9 @@ interface IndexStaticProps {
     }
 }
 
-export const getStaticProps: GetStaticProps = async (): Promise<any> => {
+export const getStaticProps: GetStaticProps = async (): Promise<
+    IndexStaticProps
+> => {
     const { data } = await PrismicClient.getSingle('waitlist', {})
     const { tagline, cta } = data
     return {
