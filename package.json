@@ -6,10 +6,10 @@
         "packages/*"
     ],
     "scripts": {
-        "all:watch": "lerna run --parallel watch",
-        "website:watch": "lerna run watch --scope @thechangebe/website",
-        "website:build": "lerna run build --scope @thechangebe/website",
-        "website:lint": "lerna run lint --scope @thechangebe/website"
+        "all:watch": "yarn lerna run --parallel watch",
+        "website:watch": "yarn lerna run watch --scope @thechangebe/website",
+        "website:build": "yarn lerna run build --scope @thechangebe/website",
+        "website:lint": "yarn lerna run lint --scope @thechangebe/website"
     },
     "dependencies": {
         "@thechangebe/website": "file:packages/website",
