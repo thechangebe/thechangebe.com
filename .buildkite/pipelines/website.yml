@@ -1,22 +1,14 @@
 steps:
-    - label: Install Dependencies
-      key: dependencies
-      plugins: [docker#v3.5.0: { image: 'node:lts' }]
-      command: yarn
-
     - label: Lint
       key: lint
-      depends_on: dependencies
+      command: yarn && yarn website:lint
       plugins: [docker#v3.5.0: { image: 'node:lts' }]
-      commands:
-          - echo "Linting Website"
-          - yarn website:lint
 
     - label: Build
       key: build
       depends_on: lint
       plugins: [docker#v3.5.0: { image: 'node:lts' }]
-      command: yarn website:build
+      command: yarn && yarn website:build
     # Deploy
     # - label: Install Now CLI
     #   command: npm install --global --unsafe-perm now
