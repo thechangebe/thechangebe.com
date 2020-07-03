@@ -1,14 +1,10 @@
-env:
-    BUILDKITE_CLEAN_CHECKOUT: true
-
 steps:
     - label: 'What packages have been changed?'
       plugins:
           - chronotc/monorepo-diff#v1.1.1:
                 wait: true
                 # @todo - Start Pull Request flow which allows this diffing algorithm to work.
-                # git --no-pager diff --name-only refs/heads/master..refs/remotes/origin/$BUILDKITE_BRANCH
-                diff: git diff --name-only HEAD~1
+                diff: git --no-pager diff --name-only refs/remotes/origin/master..refs/remotes/origin/$BUILDKITE_BRANCH
                 watch:
                     - path:
                           - 'packages/website'
