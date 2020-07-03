@@ -6,7 +6,7 @@ steps:
       plugins:
           - chronotc/monorepo-diff#v1.1.1:
                 wait: true
-                diff: 'git --no-pager diff --name-only refs/heads/master..refs/remotes/origin/$BUILDKITE_BRANCH'
+                diff: git diff --name-only HEAD~1
                 watch:
                     - path:
                           - 'packages/website'
