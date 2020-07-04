@@ -10,7 +10,7 @@ steps:
     # --------
     - label: Lint
       key: lint
-      command: yarn website:lint
+      command: yarn && yarn website:lint
       plugins: [docker-compose#v3.3.0: { run: website }]
 
     # --------
@@ -23,7 +23,7 @@ steps:
     - label: Build
       key: build
       depends_on: lint
-      command: yarn website:build
+      command: yarn && yarn website:build
       plugins:
           docker-compose#v3.3.0:
               run: website
